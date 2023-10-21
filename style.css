@@ -1,0 +1,242 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: inherit;
+	color: white;
+
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+}
+#cursor{
+	background-color: rgba(60, 255, 0, 0.63);
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	position: fixed;
+	z-index: 99;
+	transition: all linear 0.1s;
+}
+#cursor-blur{
+	background-color: rgba(9, 255, 0, 0.171);
+	height: 500px;
+	width: 500px;
+	border-radius: 50%;
+	position: fixed;
+	z-index: 9;
+	filter: blur(70px);
+	transition: all linear 0.4s;
+}
+
+#nav{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 40px;
+	padding: 0px 120px;
+	height: 130px;
+	width: 100%;
+	position: fixed;
+	z-index: 99;
+}
+
+#nav img{
+	height: 60px;
+}
+
+#nav h4{
+	text-transform: uppercase;
+	font-weight: 500;
+	cursor: pointer;
+	font-size: 1.15vw;
+}
+
+video{
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	object-fit: cover;
+}
+
+#main{
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.37);
+}
+
+#page1{
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+}
+#page1 h1{
+	font-size: 140px;
+	font-weight: 900;
+	position: relative;
+}
+
+#page1 h1::before{
+	content: "EAT. DRINK. PLAY.";
+	position: absolute;
+	color: black;
+	-webkit-text-stroke: 2px rgb(142, 179, 11);
+	z-index: -1;
+	top: -6px;
+	left: -6px;
+	
+}
+#page1 h2{
+	font-size: 30px;
+	font-weight: 800;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#page1 p{
+	font-size: 20px;
+	font-weight: 500;
+	width: 40%;
+}
+
+#page2{
+	width: 100%;
+	min-height: 100vh;
+	z-index: 10;
+}
+
+#scroller{
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	z-index: 10;
+	position: relative;
+}
+#scroller::-webkit-scrollbar{
+	display: none;
+}
+#scroller-in{ 
+	white-space: nowrap;
+	display: inline-block;
+	animation: scroll;
+	animation-duration: 30s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+#scroller h4{
+	display: inline-block;
+	font-size: 100px;
+	font-weight: 800;
+	margin-right: 10px;
+	-webkit-text-stroke: 2px rgb(255, 255, 255);
+	color: transparent;
+	transition: all linear 0.5s;
+}
+#scroller h4:hover{
+	color: rgb(102, 255, 0);
+}
+@keyframes scroll{
+	from{
+		transform: translateX(0);
+	}
+	to{
+		transform: translateX(-100%);
+	}
+}
+#about-us{
+	padding: 40px 80px ;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	z-index: 10;
+}
+#about-us img{
+	width: 230px;
+	height: 220px;
+	border-radius: 20px;
+	object-fit: cover;
+}
+#about-us-in{
+	display: flex;
+	flex-direction: column;
+}
+
+#about-us-in h1{
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 50px;
+}
+#about-us-in p{
+	text-align: center;
+	font-size: 20px;
+	width: 650px;
+	font-size: 20px;
+}
+
+#card-container{	
+	background-color: rgb(0, 0, 0);
+	height: 60vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	z-index: 10;
+	position: relative;
+	
+}
+
+.card{
+	height: 88%;
+	width: 24%;
+	border-radius: 30px;
+	background-size: cover;
+	background-position: center;
+	transition: all ease 0.6s;
+	overflow: hidden;
+}
+
+#card1{
+	background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+}
+
+#card2{
+	background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-300x300.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+}
+
+#card3{
+	background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+}
+
+.overlay{
+	background-color: greenyellow;
+	height: 100%;
+	width: 100%;
+	border-radius: 30px;
+	padding: 70px 20px;
+	opacity: 0;
+	transition: all ease 0.6s;
+}
+.overlay h1{
+	color: black;
+	font-weight: 900;
+	margin-bottom: 20px;
+}
+
+.overlay p{
+	color: black;
+}
+
+.card:hover .overlay{
+	opacity: 1;
+}
+
+.card:hover{
+	transform: rotate3d(1,1,0,30deg);
+}
